@@ -1,0 +1,32 @@
+[09-Apr-2019 05:50:08 UTC] PHP Parse error:  syntax error, unexpected 'add_action' (T_STRING) in /app/public/wp-content/themes/understrap/functions.php on line 67
+[09-Apr-2019 05:52:08 UTC] PHP Parse error:  syntax error, unexpected 'add_action' (T_STRING) in /app/public/wp-content/themes/understrap/functions.php on line 67
+[09-Apr-2019 06:53:08 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /app/public/wp-content/themes/understrap/inc/customizer.php on line 173
+[09-Apr-2019 06:53:10 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /app/public/wp-content/themes/understrap/inc/customizer.php on line 173
+[09-Apr-2019 06:57:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function add_section() on null in /app/public/wp-content/themes/understrap/inc/customizer.php:138
+Stack trace:
+#0 /app/public/wp-content/themes/understrap/functions.php(35): require_once()
+#1 /app/public/wp-settings.php(479): include('/app/public/wp-...')
+#2 /app/public/wp-config.php(76): require_once('/app/public/wp-...')
+#3 /app/public/wp-load.php(37): require_once('/app/public/wp-...')
+#4 /app/public/wp-blog-header.php(13): require_once('/app/public/wp-...')
+#5 /app/public/index.php(17): require('/app/public/wp-...')
+#6 {main}
+  thrown in /app/public/wp-content/themes/understrap/inc/customizer.php on line 138
+[09-Apr-2019 06:58:50 UTC] PHP Fatal error:  Cannot redeclare understrap_css_customizer() (previously declared in /app/public/wp-content/themes/understrap/functions.php:52) in /app/public/wp-content/themes/understrap/inc/customizer.php on line 171
+[09-Apr-2019 06:58:52 UTC] PHP Fatal error:  Cannot redeclare understrap_css_customizer() (previously declared in /app/public/wp-content/themes/understrap/functions.php:52) in /app/public/wp-content/themes/understrap/inc/customizer.php on line 171
+[09-Apr-2019 06:59:29 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'understrap_customizer_register' not found or invalid function name in /app/public/wp-includes/class-wp-hook.php on line 286
+[09-Apr-2019 06:59:31 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'understrap_customizer_register' not found or invalid function name in /app/public/wp-includes/class-wp-hook.php on line 286
+[09-Apr-2019 07:00:30 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /app/public/wp-content/themes/understrap/inc/customizer.php on line 168
+[09-Apr-2019 07:00:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function add_section() on null in /app/public/wp-content/themes/understrap/inc/customizer.php:138
+Stack trace:
+#0 /app/public/wp-content/themes/understrap/functions.php(35): require_once()
+#1 /app/public/wp-settings.php(479): include('/app/public/wp-...')
+#2 /app/public/wp-config.php(76): require_once('/app/public/wp-...')
+#3 /app/public/wp-load.php(37): require_once('/app/public/wp-...')
+#4 /app/public/wp-blog-header.php(13): require_once('/app/public/wp-...')
+#5 /app/public/index.php(17): require('/app/public/wp-...')
+#6 {main}
+  thrown in /app/public/wp-content/themes/understrap/inc/customizer.php on line 138
+[09-Apr-2019 07:23:16 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'understrap_css_customizer' not found or invalid function name in /app/public/wp-includes/class-wp-hook.php on line 286
+[09-Apr-2019 07:23:17 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'understrap_css_customizer' not found or invalid function name in /app/public/wp-includes/class-wp-hook.php on line 286
+[09-Apr-2019 07:23:18 UTC] PHP Warning:  call_user_func_array() expects parameter 1 to be a valid callback, function 'understrap_css_customizer' not found or invalid function name in /app/public/wp-includes/class-wp-hook.php on line 286
