@@ -1,3 +1,84 @@
+/* side bar */
+#sidebar-nav{
+  height:100vh;
+  position:absolute;
+  width:250px;
+  background: linear-gradient(90deg, rgba(84,122,133,1) 0%, rgba(67,112,125,0.8477591720281863) 92%, rgba(0,53,64,0) 100%);
+  margin-left: 0px;
+  padding:3em 0 3em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.5s;
+}
+#sidebar-header{
+  padding:1em;
+  flex-basis: 10%;
+}
+.sidebar-menu{
+  width: 100%;
+}
+.sidebar-menu > div > ul{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin:0;
+  padding: 3em 0 3em 0;
+  width:100%;
+  align-items: center;
+  text-align: center;
+}
+
+.sidebar-menu > div > ul >li{
+  width:100%;
+  display: block;
+  width: 100%;
+  
+}
+.sidebar-menu > div > ul >li>a{
+  color: lightblue;
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 3em;
+  background-color: rgba(0, 0, 0, 0.452);
+  text-transform: uppercase;
+}
+.sidebar-menu > div > ul >li>a:hover{
+  background-color: rgba(10, 12, 153, 0.452);
+  text-decoration: none;
+}
+.social-links{
+  flex-basis:auto;
+  position: absolute;
+  bottom: 0;
+  margin: 1em;    
+}
+.nav-expand{
+  position: relative;
+  margin-left: 98%;
+  color: rgb(56, 173, 173);
+  background-color: aliceblue;
+  border-radius:20px;
+}
+.nav-icon{
+  display: block;
+}
+
+.collapsed{
+  margin-left:-205px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
 // Some basic padding for all wrappers
 .wrapper {
   padding: $grid-gutter-width 0; }

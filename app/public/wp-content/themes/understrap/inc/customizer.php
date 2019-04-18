@@ -132,7 +132,37 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 		);
 	}
 } // endif function_exists( 'understrap_theme_customize_register' ).
+
+
+
 function understrap_customizer_register($wp_customize){
+	//parts panel
+	$wp_customize->add_panel('parts_panel',array(
+		'title'=>__('Parts','understrap'),
+		'description' => 'Choose The header/footer being used'
+	));
+		//header section
+		$wp_customize->add_section('header_section', array(
+			'title'=> __('Header', 'understrap'),
+			'description' => 'Change the header template',
+			'panel'=> 'parts_panel'
+		));
+		
+		
+		$wp_customize->add_setting('get_header', array('default'=> '',));
+
+		$wp_customize->add_control('get_header_dd',array(
+			'label'=>'Choose Header',
+			'description'=>'Change the template used for the header',
+			'section'=> 'header_section',
+			'type'=>'select',
+			'choices'=> array(
+				'' => __('Default'),
+				'sidebar' =>__('Sidebar')		
+			),
+			'settings'=>'get_header'
+		));
+		
 	//adding a font panel
 	//font panel
 	$wp_customize->add_panel('font_panel', array(
@@ -511,6 +541,9 @@ function understrap_customizer_register($wp_customize){
 				//end colors of skeleton
 				
 				}
+				//header setting -- may need echo
+				$header_name_pk = get_theme_mod('get_header');
+
 function understrap_css_customizer(){
 	?>
 	<style type='text/css'>
@@ -562,6 +595,9 @@ function understrap_css_customizer(){
 	</style>
 	<?php
 }
+
+
+
 add_action('wp_head', 'understrap_css_customizer');
 add_action('customize_register', 'understrap_customizer_register');
 add_action( 'customize_register', 'understrap_theme_customize_register' );
