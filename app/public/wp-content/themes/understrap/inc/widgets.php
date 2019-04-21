@@ -168,5 +168,29 @@ if ( ! function_exists( 'understrap_widgets_init' ) ) {
 			)
 		);
 
+		register_sidebar(
+			array(
+				'name'          => __( 'Sidebar Header Top', 'understrap' ),
+				'id'            => 'sidebarheadertop',
+				'description'   => __( 'Sidebar Header Top widget with dynamic grid', 'understrap' ),
+				'before_widget' => '<div id="%1$s top-header-widget" class="cust-widget sht-widget">',
+				'after_widget'  => '</div><!-- .sht-widget -->',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'          => __( 'Sidebar Header Bottom', 'understrap' ),
+				'id'            => 'sidebarheaderbottom',
+				'description'   => __( 'Sidebar Header Bottom widget with dynamic grid', 'understrap' ),
+				'before_widget' => '<div id="bottom-header-widget" class="cust-widget shb-widget">',
+				'after_widget'  => '</div><!-- .shb-widget -->',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+				
 	}
 } // endif function_exists( 'understrap_widgets_init' ).

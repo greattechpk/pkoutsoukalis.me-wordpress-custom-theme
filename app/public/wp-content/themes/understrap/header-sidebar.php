@@ -30,10 +30,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 
 <div class="site" id="page">
+	
 
 	<!-- ******************* The Navbar Area ******************* -->
-	<div id="sidebar-nav">                        
-        <div id="sidebar-header">
+	<div id="sidebar-nav" class="collapsed nav-color">                        
+	<i id="sidebar-transition" class="fa fa-caret-square-right fa-3x side-nav-collapse"></i>
+	
+	<div id="sidebar-header">
 
 
                 <!-- Your site title as branding in the menu -->
@@ -53,34 +56,48 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php } else {
 						the_custom_logo();
                     } ?><!-- end custom logo -->
+
+
+
+					<!-- start sidebar top widget area -->
+
+					<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('sidebarheadertop') ) ?>
                     
+					<!-- end sidebar top widget area -->
 
         </div>
-        
+
+
+
+
         <nav class="sidebar-menu">
 
 				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
-						//'container_class' => 'collapse navbar-collapse',
-						//'container_id'    => 'navbarNavDropdown',
-						//'menu_class'      => 'navbar-nav ml-auto',
 						'fallback_cb'     => '',
 						'menu_id'         => 'main-menu',
 						'depth'           => 2,
 						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+
 					)
 				); ?>
 
 
 		</nav><!-- .site-navigation -->
-		<i id="sidebar-collapse" class="fas fa-chevron-circle-left fa-3x nav-expand"></i>
-                        <div class="social-links">
-                                <i class="fab fa-codepen fa-3x"></i>
-                                <i class="fab fa-linkedin fa-3x"></i>
-                                <i class="fab fa-git fa-3x"></i>
-                        </div>
+
+
+		
+
+
+				<!--start sidebarheaderbottom -->
+
+				<?php if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar('sidebarheaderbottom') ) ?>
+
+				<!--end sidebarheaderbottom widget area -->
+
+				
 	</div><!-- #wrapper-navbar end -->
 
 	<!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -91,11 +108,13 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
                 <script>
                 $(document).ready(function () {
+					//let internalText = $('#main-menu > li > a').text();
+					$('#main-menu > li > a > span').addClass('d-none');
 
-                    $('#sidebar-collapse').on('click', function () {
+					$('#sidebar-transition').click( function () {
                         $('#sidebar-nav').toggleClass('collapsed');
-                        $('#sidebar-collapse').toggleClass('fa-chevron-circle-left').toggleClass('fa-chevron-circle-right');
-                        $('#sidebar-header').toggle();
+                        $('#sidebar-transition').toggleClass('fa-caret-square-left').toggleClass('fa-caret-square-right');
+						$('#main-menu > li > a > span').toggleClass('d-none');
                     });
 
                     });

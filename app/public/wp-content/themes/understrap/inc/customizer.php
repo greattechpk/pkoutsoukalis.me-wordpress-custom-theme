@@ -529,14 +529,14 @@ function understrap_customizer_register($wp_customize){
 				'settings' => 'background_color'
 				) ));
 				
-			$wp_customize->add_setting('bg-primary', array(
+			$wp_customize->add_setting('nav-color', array(
 				'default'=> '#000',
 			));
 			
-				$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'bg-primary', array(
+				$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'nav-color', array(
 					'label'=>__('Edit Navbar Color','understrap'),
 					'section' => 'understrap_colors',
-					'settings' => 'bg-primary'
+					'settings' => 'nav-color'
 					) ));
 				//end colors of skeleton
 				
@@ -547,7 +547,9 @@ function understrap_customizer_register($wp_customize){
 function understrap_css_customizer(){
 	?>
 	<style type='text/css'>
-	.bg-primary{background-color: <?php echo get_theme_mod('bg-primary');?>!important;}
+	.nav-color{
+		background-color: <?php echo get_theme_mod('nav-color');?>!important;
+	}
 	h1{
 		color:<?php echo get_theme_mod('h1_color');?>!important;
 		font-family:<?php echo get_theme_mod('h1_font_family');?>;

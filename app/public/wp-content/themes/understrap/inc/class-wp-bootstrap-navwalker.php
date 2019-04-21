@@ -275,7 +275,7 @@ if ( ! class_exists( 'Understrap_WP_Bootstrap_Navwalker' ) ) {
 			}
 
 			// Put the item contents into $output.
-			$item_output .= isset( $args->link_before ) ? $args->link_before . $icon_html . $title . $args->link_after : '';
+			$item_output .= isset( $args->link_before ) ? $args->link_before . $icon_html . '<span id=\'nav-text\'>' . $title . '</span>' . $args->link_after : '';
 			/**
 			 * This is the end of the internal nav item. We need to close the
 			 * correct element depending on the type of link or link mod.
