@@ -40,7 +40,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 
                 <!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
+					<!-- <?php if ( ! has_custom_logo() ) { ?>
 
 						<?php if ( is_front_page() && is_home() ) : ?>
 
@@ -50,7 +50,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
 
-						<?php endif; ?>
+						<?php endif; ?> -->
 
 
 					<?php } else {
@@ -115,7 +115,17 @@ $container = get_theme_mod( 'understrap_container_type' );
                         $('#sidebar-nav').toggleClass('collapsed');
                         $('#sidebar-transition').toggleClass('fa-caret-square-left').toggleClass('fa-caret-square-right');
 						$('#main-menu > li > a > span').toggleClass('d-none');
-                    });
+						$('#infocontainer').removeClass('expanded').removeClass('expandednocollapse');
 
                     });
+					$('#infocontainer').click(function (){
+			           if($('#sidebar-nav').hasClass('collapsed')){
+						   $('#infocontainer').toggleClass('expanded');
+					   }else{
+						   $('#infocontainer').toggleClass('expandednocollapse')
+					   }
+
+			        });
+                });
+
                 </script>

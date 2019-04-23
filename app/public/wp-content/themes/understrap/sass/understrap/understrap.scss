@@ -1,7 +1,28 @@
+/*general html classes*/
+.content-container{
+  padding-left: 0px;
+  padding-right: 0px;
+  overflow-x:hidden;
+}
+.section-full{
+  min-height: 100vh;
+  min-width: 100vw;
+  padding-left: 100px;
+}
+
+.sidebar-padding{
+  padding-left: 60px;
+}
+
+.bg-img-moon{
+  background-image:url(http://pkoutsoukalis-me-wordpress-custom-theme.local/wp-content/uploads/2019/04/50577925_2352402718105838_5449364787592953856_o.jpg);
+}
+
+
 /* side bar */
 #sidebar-nav{
   height:100vh;
-  position:absolute;
+  position:fixed;
   width:250px;
   margin-left: 0px;
   padding:3em 0 3em 0;
@@ -14,7 +35,7 @@
 }
 
 #sidebar-header{
-  padding:1em;
+  padding:0.5em;
   flex-basis: 10%;
 }
 .sidebar-menu{
@@ -37,28 +58,34 @@
   display: block;
 }
 .sidebar-menu > div > ul >li>a{
-  color: #98878f;
+  color: #b3a9ac;
   display: block;
   width: 100%;
   text-align: left;
-  background-color: #000000;
+  background-color: #0d0e11;
   text-transform: uppercase;
 }
 .sidebar-menu > div > ul >li>a:hover{
-  background-color: #98536d;
+  background-color: #b3a9ac;
   text-decoration: none;
-  color:#000000;
+  color:#0d0e11;
 }
 
 
 //sidebar transitions
 
 .side-nav-collapse{
-  color:#cc0000;
+  color:#182236;
+  background-color: #b3a9ac;
+  border-radius: 10px;
   position:absolute;
   right:-0.8em;
   top: 50%;
   z-index:-1;
+  
+}
+.side-nav-collapse:hover{
+  background-color: #6d6167;
 }
 
 .collapsed{
@@ -87,6 +114,90 @@
   z-index:2000;
 }
 
+
+
+
+
+
+
+//top widget
+
+#infocontainer{
+  display: inline-block;
+  position:relative;
+  transition: 0.5s;
+  
+}
+
+#infointernal{
+  display: flex;
+  background-color: #0d0e11;
+  border: 2px solid #B5ACAF;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+
+#infotitle{
+  color: #B5ACAF !important;
+}
+#infotext{
+  color: #B5ACAF !important;
+}
+
+#infoinfo{
+  padding:0.5em;
+}
+
+
+.expanded{
+  #infointernal{
+    overflow:visible;
+  width:max-content;
+  position:absolute;
+  height: 200px;
+  z-index:3000;
+  transition: 0.5s;
+  #infopic{
+    padding:0.5em;
+  }
+  #infoinfo ,#infotitle ,#infotext{
+    display:block;
+  }
+  }
+  
+}
+
+.expandednocollapse{
+  height: 200px;
+  #infointernal{
+    overflow:visible;
+    width:max-content;
+    left: -100px;    
+    position: absolute;
+    transition: 0.5s;
+    #infopic{
+      padding:0.5em;
+    }
+    #infoinfo ,#infotitle ,#infotext{
+      display:block;
+    }
+  } 
+}
+
+#infopic{
+  display: block;
+  border-radius: 20px;
+  max-height: 200px;
+}
+
+
+#infoinfo ,#infotitle ,#infotext{
+  display:none;
+}
+
+
+
+
 //bottom header social/container
 .shb-widget{
   display:block;
@@ -97,9 +208,9 @@
     flex-wrap:wrap;
   a{
     padding:0.8em;
-    color:#cc0000;
+    color:#B5ACAF;
     :hover{
-      color:#98878f;
+      color:#6d6167;
     }
   }
   
